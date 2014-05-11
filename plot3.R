@@ -2,7 +2,6 @@ data <- read.csv.sql("household_power_consumption.txt", sql = "select * from fil
 time1 <-  as.POSIXct(strptime(paste(data[,1], data[,2]),"%d/%m/%Y %H:%M:%S"))
 png(file = "plot3.png", bg = "transparent", width = 480, height = 480)
 
-plot(time1,data[,7], xlab="",ylab="Energy sub metering")
 plot(time1,data[,7], xlab="",ylab="Energy sub metering", type='l')
 lines(time1,data[,8], col="red")
 lines(time1,data[,9], col="blue")
